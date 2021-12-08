@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "axios": "^0.24.0"
+  },
+  "name": "api_guilherme_pix",
+  "version": "1.0.0",
+  "description": "Integração API Pix GerenciaNet",
+  "main": "index.js",
+  "scripts": {
+    "start:dev":"nodemon src/server.js"
+  },
+  "keywords": [
+    "API",
+    "Pix",
+    "GerenciaNet"
+  ],
+  "author": "Guilherme Simões",
+  "license": "MIT"
+}
