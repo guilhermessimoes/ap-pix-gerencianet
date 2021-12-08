@@ -29,7 +29,31 @@ axios({
     data: {
         grant_type: 'client_credentials'
     }
-}).then((response) => console.log(response.data))
+}).then((response) => {
+    const accessToken = response.data?.access_token
+
+    const reqGN = axios.create({
+        baseURL: process.env.GN_ENDPOINT,
+        httpsAgent: agent,
+        headers: {
+           Authorization: `Bearer ${accessToken}` ,
+           'Content-Type': 'application/json'
+        }
+    })   
+
+    const dataCob = {
+        calendario: {
+            expiracao: 3600
+        },  
+        valor: {
+            original: '100.00'
+        },
+        chave: 'f90a2e45-ba54-41b9-b1d6-0dff8ce9559e',
+        solicitacaoPagador: 'Cobrança dos serviços Prestado.'
+    }
+ 
+    reqGN.post('/v2/cob', dataCob).then(console.log)
+})
 
 console.log(credentials)
 console.log(cert)
