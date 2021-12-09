@@ -4,14 +4,16 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
-    "axios": "^0.24.0"
+    "axios": "^0.24.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
   },
   "name": "api_guilherme_pix",
   "version": "1.0.0",
   "description": "Integração API Pix GerenciaNet",
   "main": "index.js",
   "scripts": {
-    "start:dev":"nodemon src/server.js"
+    "start:dev": "nodemon src/server.js"
   },
   "keywords": [
     "API",
